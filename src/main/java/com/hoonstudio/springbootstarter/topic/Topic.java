@@ -13,17 +13,27 @@ public class Topic {
     private String description;
     @Indexed(direction = IndexDirection.ASCENDING)
     private int pricePerTopic;
+    private Location location;
 
     // You can do @Indexed(direction = IndexDirection.ASCENDING) for an attribute if you want it to be stored in order
 
-    public Topic(String name, String description, int pricePerTopic) {
+    public Topic(String name, String description, int pricePerTopic, Location location) {
         this.name = name;
         this.description = description;
         this.pricePerTopic = pricePerTopic;
+        this.location = location;
     }
 
     public Topic(){
 
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public int getPricePerTopic() {

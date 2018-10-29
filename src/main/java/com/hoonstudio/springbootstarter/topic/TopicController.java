@@ -31,21 +31,28 @@ public class TopicController {
         this.topicRepository.save(topic);
     }
 
-    @DeleteMapping("topics/{id}")
+    @DeleteMapping("/topics/{id}")
     public void delete(@PathVariable("id") String id){
         this.topicRepository.deleteById(id);
     }
 
-    @GetMapping("topics/{id}")
+    @GetMapping("/topics/{id}")
     public Topic getTopicById(@PathVariable("id") String id){
        Topic topic = this.topicRepository.findTopicById(id);
 
         return topic;
     }
 
-    @GetMapping("price/{maxPrice}")
+    @GetMapping("/price/{maxPrice}")
     public List<Topic> getPricePerTopicLessThan(@PathVariable("maxPrice") int maxPrice){
         List<Topic> topics = this.topicRepository.findByPricePerTopicLessThan(maxPrice);
+
+        return topics;
+    }
+
+    @GetMapping("/topics/location/{country}")
+    public List<Topic> getByCountry(@PathVariable("country") String country){
+        List<Topic> topics = this.topicRepository.findByCountry(country);
 
         return topics;
     }

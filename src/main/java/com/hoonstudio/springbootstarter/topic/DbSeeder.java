@@ -21,20 +21,22 @@ public class DbSeeder implements CommandLineRunner {
         Topic java = new Topic(
                 "JAvaaaaa",
                 "Javaav",
-                25
+                25,
+                new Location("USA")
         );
 
         Topic kotlin = new Topic(
                 "kotlein",
                 "koltinet",
-                25
+                25,
+                new Location("Korea")
         );
 
-        // drop all topics
-        this.topicRepository.deleteAll();
-
-        //add topics
-        List<Topic> topics = Arrays.asList(java, kotlin);
-        this.topicRepository.saveAll(topics);
+//        // drop all topics
+//        this.topicRepository.deleteAll();
+//
+//        //add topics
+//        List<Topic> topics = Arrays.asList(java, kotlin);
+//        this.topicRepository.saveAll(topics);
     }
 }
