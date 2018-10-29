@@ -20,12 +20,14 @@ public class DbSeeder implements CommandLineRunner {
     public void run(String... args) throws Exception {
         Topic java = new Topic(
                 "JAvaaaaa",
-                "Javaav"
+                "Javaav",
+                25
         );
 
         Topic kotlin = new Topic(
                 "kotlein",
-                "koltinet"
+                "koltinet",
+                25
         );
 
         // drop all topics
